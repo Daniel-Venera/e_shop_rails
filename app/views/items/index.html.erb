@@ -1,8 +1,19 @@
-<% @items.each do |item| %>
-<%= item.title %>
-<%= item.image_url %>
-<%= item.description %>
-<%= item.price  %>
-<% end %>
-
-
+<div class="container-fluid">
+  <div class="container">
+    <div class="row">
+      <% @items.each do |item| %>
+      <div class="col-md-3 col-sm-6 my-2">
+        <div class="card"  >
+          <img src="https://dummyimage.com/170x/000/fff&text=Test" class="card-img-top" alt="..." >
+          <div class="card-body text-center">
+            <h5 class="card-title nowrap"> <%= item.title.truncate(15) %> </h5>
+            <smaller class="card-text text-center"> <%= item.price.to_i %> € </smaller>
+            <br />
+            <a href="#" class="btn btn-primary"> Voir la photo </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+   </div>
+  </div>
+</div>
