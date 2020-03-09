@@ -15,6 +15,10 @@ class Item < ApplicationRecord
     numericality: {greater_than_or_equal_to: 5}
 
     validates :image_url, 
-    presence: true 
+    presence: true
+
+    has_many :carts 
+    has_many :users, through: :carts
+    
 
 end
