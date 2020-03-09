@@ -15,6 +15,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   </head>
+  
 
   <body>
 	<% if user_signed_in? %>
@@ -80,15 +81,14 @@
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-
-  
    
 <%= yield %>
+
+
   </body>
 
 <!-- Footer -->
-<footer class="page-footer font-small blue pt-4 bg-primary text-white">
+<footer class=" footer page-footer font-small blue pt-4 bg-primary text-white sticky-bottom">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left text-white">
