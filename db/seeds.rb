@@ -12,7 +12,7 @@ require 'faker'
 Item.destroy_all
 # User.destroy_all
 
-10.times do |a|
+20.times do |a|
     a = Item.create(title: Faker::Creature::Cat.breed + " #{rand(1..1000)}", description: "a #{['big', 'little', 'medium-sized'].sample + " and " + ["lovely", "pretty", 'beautiful', 'gorgeous']. sample} catty which his first words were : '#{Faker::Quote.yoda}'", price: rand(5..20), image_url: "not delivered yet")
 end
 
