@@ -11,7 +11,7 @@ require 'faker'
 
 Item.destroy_all
 User.destroy_all
-Cart.destroy_all
+
 
 count = 0
 20.times do |a|
@@ -29,13 +29,5 @@ count = 0
 	user.password = 'e-kitty'
 	user.save
 end
-
-count = 0
-
-10.times do |cart|
-	 count += 1
-	a = Cart.create(id: count, user: User.find(rand(1..20)), item: Item.find(rand(1..20)))
-end
-
 
 puts 'seeds loaded'

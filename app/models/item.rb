@@ -17,8 +17,7 @@ class Item < ApplicationRecord
     validates :image_url, 
     presence: true
 
-    has_many :carts 
-    has_many :users, through: :carts
+    
     
 
 end
