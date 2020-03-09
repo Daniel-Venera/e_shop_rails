@@ -10,10 +10,17 @@
 require 'faker'
 
 Item.destroy_all
-# User.destroy_all
+User.destroy_all
 
 20.times do |a|
     a = Item.create(title: Faker::Creature::Cat.breed + " #{rand(1..1000)}", description: "a #{['big', 'little', 'medium-sized'].sample + " and " + ["lovely", "pretty", 'beautiful', 'gorgeous']. sample} catty which his first words were : '#{Faker::Quote.yoda}'", price: rand(5..20), image_url: "not delivered yet")
+end
+
+20.times do |user|
+	user = User.new
+	user.email = Faker::Name.first_name + '.' + Faker::Name.last_name + '@yopmail.com'
+	user.password = 'e-kitty'
+	user.save
 end
 
 puts 'seeds loaded'
