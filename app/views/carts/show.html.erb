@@ -3,24 +3,22 @@
 <br />
 <br />
 <div class="card-body">
-  <% @cart.items.each do |item|%>
+  <% @cart.cart_items.each do |cart_item|%>
     <div class="row">
       <div class="col-12 col-sm-12 col-md-2 text-center">
         <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
       </div>
       <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-        <h4 class="product-name"><strong> <%= item.title %> </strong></h4>
-        <small> <%= item.description %></small>
+        <h4 class="product-name"><strong> <%= cart_item.item.title %> </strong></h4>
+        <small> <%= cart_item.item.description %></small>
       </div>
       <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
         <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
-          <h6><strong> Price : <%= item.price.to_i %> €</strong> </h6>
+          <h6><strong> Price : <%= cart_item.item.price.to_i %> €</strong> </h6>
         </div>
 
         <div class="col-3 col-sm-2 col-md-2 text-right">
-          <button type="button" class="btn btn-outline-danger">
-            <h6><strong> Supprimer </strong></h6>
-          </button>
+					<%= link_to "Supprimer du Panier", item_cart_item_path(cart_item.item.id, cart_item.id), method: "delete", class: "btn btn-outline-danger" %>
         </div>
       </div>
     </div>
@@ -28,7 +26,8 @@
   <% end %>
   <br />
   <div class="pull-right">
-		<%= link_to "Confirmer la Commande", user_cart_orders_path(current_user.id, current_user.cart.id), class: "btn btn-success pull-right", method: "post" %>
+		<%= link_to "Confirmer la Commande", user_cart_orders_path(current_user.id, current_user.cart.id), class: "float-left btn btn-success pull-right", method: "post" %>
+		<p class="float-right border rounded p-2 bg-light">Prix Total : <%= @price_sum %> euros</p>
 
   </div>
 </div>

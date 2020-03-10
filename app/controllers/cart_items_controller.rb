@@ -1,6 +1,12 @@
 class CartItemsController < ApplicationController 
   before_action :authenticate_user!
 
+	def destroy
+		@cart_item = CartItem.find(params[:id])
+		@cart_item.destroy
+		redirect_to user_cart_path(current_user.id, current_user.cart.id)	
+	end
+
   def create
     @cart_item = CartItem.new
     puts "!" * 60
