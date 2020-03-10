@@ -28,6 +28,7 @@
   <% end %>
   <br />
   <div class="pull-right">
-    <a href="" class="btn btn-success pull-right"> Confirmer la commande </a>
+		<%= link_to "Confirmer la Commande", user_cart_orders_path(current_user.id, current_user.cart.id), class: "btn btn-success pull-right", method: "post" %>
+
   </div>
 </div>
