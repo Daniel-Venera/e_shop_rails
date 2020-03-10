@@ -75,12 +75,12 @@
     
     </nav>
 
-    <p class="notice text-danger"><%= notice %></p>
-    <p class="alert text-danger"><%= alert %></p>
     
 
     <div class="container">
-
+      <!-- Les Flash d'error -->
+      <%= render 'layouts/messages' %>
+      <br />
       <%= yield %>
 
     </div>
