@@ -9,7 +9,7 @@
 
 require 'faker'
 
-# CartItem.destroy_all
+CartItem.destroy_all
 Cart.destroy_all
 Item.destroy_all
 User.destroy_all
@@ -32,15 +32,15 @@ count = 0
 	user.save
 end
 
-count = 0
-20.times do |cart|
-	count += 1
-	cart = Cart.create(id: count, user_id: User.find(count).id)
-end
 # count = 0
-# 20.times do |cart_items|
+# 20.times do |cart|
 # 	count += 1
-# 	cart_items = CartItem.create(id: count, item_id: Item.find(rand(1..20)).id, cart_id: Cart.find(rand(1..20)).id)
+# 	cart = Cart.create(id: count, user: User.find(count))
 # end
+count = 0
+50.times do |cart_items|
+	count += 1
+	cart_items = CartItem.create(id: count, item: Item.find(rand(1..20)), cart: Cart.all[rand(0..19)])
+end
 
 puts 'seeds loaded'
