@@ -6,17 +6,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_one :cart 
+  has_one :cart, dependent: :destroy
 
 
 
 
-  def create_cart 
-    puts "==========================================="
-    puts "je suis dans la methode create"
-    puts self
-    puts "==========================================="
-    @cart = Cart.new(user: self)
+  def create_cart
+    @cart = Cart.new(id: self.id, user: self)
     @cart.save
     self.cart = @cart
     self.save
