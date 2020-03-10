@@ -1,4 +1,4 @@
-class Item < ApplicationRecord
+class Item < ApplicationRecord    
     validates :title, 
     presence: true
     validates_length_of :title,
