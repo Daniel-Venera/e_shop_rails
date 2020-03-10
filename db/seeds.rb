@@ -37,10 +37,10 @@ end
 # 	count += 1
 # 	cart = Cart.create(id: count, user: User.find(count))
 # end
-count = 0
-50.times do |cart_items|
-	count += 1
-	cart_items = CartItem.create(id: count, item: Item.find(rand(1..20)), cart: Cart.all[rand(0..19)])
-end
+# count = 0
+# 50.times do |cart_items|
+# 	count += 1
+# 	cart_items = CartItem.create(id: count, item: Item.find(rand(1..20)), cart: Cart.all[rand(0..19)])
+# end
 
 puts 'seeds loaded'
