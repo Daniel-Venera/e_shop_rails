@@ -11,8 +11,8 @@
             <p class="card-text"> <%= %> </p>
         </div>
         <div class="card-body">
-            <a href="<%= edit_user_registration_path %>" type="button" class="btn btn-primary mt-5">Editer le profil</a>
-            <a href="#" type="button" class="btn btn-secondary mt-5">Supprimer le compte</a>
+            <a href="<%= edit_user_registration_path %>" type="button" class="btn btn-warning mt-5">Editer le profil</a>
+            <a href="<%= user_cart_path(@user.id, @user.cart.id)  %>" type="button" class="btn btn-primary mt-5">Voir mon Panier</a>
         </div>
             <div class="card-footer text-muted">
                 2 days ago
