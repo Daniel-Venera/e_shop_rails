@@ -13,6 +13,8 @@ CartItem.destroy_all
 Cart.destroy_all
 Item.destroy_all
 User.destroy_all
+Order.destroy_all
+OrderItem.destroy_all
 
 
 count = 0
@@ -38,9 +40,22 @@ end
 # 	cart = Cart.create(id: count, user: User.find(count))
 # end
 # count = 0
-# 50.times do |cart_items|
-# 	count += 1
-# 	cart_items = CartItem.create(id: count, item: Item.find(rand(1..20)), cart: Cart.all[rand(0..19)])
-# end
+50.times do |cart_items|
+ 	count += 1
+ 	cart_items = CartItem.create(id: count, item: Item.find(rand(1..20)), cart: Cart.all[rand(0..19)])
+end
+
+20.times do 
+	order = Order.new
+	order.user = User.all[rand(0..19)]
+	order.save
+end
+
+75.times do
+	order_item = OrderItem.new
+	order_item.item = Item.all[rand(0..19)]
+	order_item.order = Order.all[rand(0..19)]
+	order_item.save
+end
 
 puts 'seeds loaded'
