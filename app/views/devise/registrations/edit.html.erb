@@ -1,4 +1,4 @@
-<h2 class="text-center mb-4">Éditer Profil<%= resource_name.to_s.humanize %></h2>
+<h2 class="text-center mb-4">Éditer Profil <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -39,4 +39,4 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "form-control btn-danger my-3" %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "form-control btn-primary my-3 text-center"%>

@@ -6,13 +6,12 @@
             <div class="card-body">
             <h5 class="card-title"> <%= @user.email %> </h5>
             <h6 class="card-subtitle text-muted"> Cat lover</h6>
-            <%= link_to "Changer Mot de Passe", edit_user_registration_path %>
         </div>
         <div class="card-body">
             <p class="card-text"> <%= %> </p>
         </div>
         <div class="card-body">
-            <a href="#" type="button" class="btn btn-primary mt-5">Editer le profil</a>
+            <a href="<%= edit_user_registration_path %>" type="button" class="btn btn-primary mt-5">Editer le profil</a>
             <a href="#" type="button" class="btn btn-secondary mt-5">Supprimer le compte</a>
         </div>
             <div class="card-footer text-muted">
