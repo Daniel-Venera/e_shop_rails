@@ -1,14 +1,21 @@
-
+<div class="jumbotron">
+  <h1 class="display-3 text-dark">E-KITTY</h1>
+  <p class="lead text-dark">On a tant à partager !</p>
+  <hr class="my-4 text-dark">
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
     <div class="row">
       <% @items.each do |item| %>
       <div class="col-md-3 col-sm-6 my-2">
         <div class="card"  >
-          <img src="https://dummyimage.com/170x/000/fff&text=Test" class="card-img-top" alt="..." >
+          <img src="https://dummyimage.com/170x/000/fff&text=Test" class="card-img-top kitty" alt="..." >
           <div class="card-body text-center">
             <h5 class="card-title nowrap"> <%= item.title.truncate(15) %> </h5>
             <small class="card-text text-center"> <%= item.price.to_i %> € </small>
             <br />
-            <a href="#" class="btn btn-primary"> Voir la photo </a>
+            <a href="<%= item_path(item.id)%>" class="btn btn-primary"> Voir la photo </a>
           </div>
         </div>
       </div>

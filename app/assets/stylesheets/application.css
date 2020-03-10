@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ footer {
+  bottom: 0;
+}
+
+.jumbotron {
+  background-image: url(kitty.jpg);
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center top;
+  
+  }
+ 
+  
+}
+
+.jumbotron img {
+  
+}
