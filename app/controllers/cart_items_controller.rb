@@ -1,6 +1,7 @@
-class CartItemsController < ApplicationController
+class CartItemsController < ApplicationController 
+  before_action :authenticate_user!
+
   def create
-    
     @cart_item = CartItem.new
     puts "!" * 60
     puts params
