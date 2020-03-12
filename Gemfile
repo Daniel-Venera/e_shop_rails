@@ -5,6 +5,8 @@ ruby '2.5.1'
 gem 'faker'
 gem 'table_print'
 gem 'devise'
+gem 'stripe'
+gem 'dotenv-rails', groups: [:development, :test]
 gem "aws-sdk-s3", require: false
 gem 'dotenv'
 

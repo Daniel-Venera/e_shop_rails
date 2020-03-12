@@ -1,0 +1,14 @@
+<h2>Merci, vous avez pay&eacute; <strong> <%= @amount / 100 %>&euro;</strong>!</h2>
+
+
+
+<h3>Votre commande est CONFIRM&Eacute;E</h3>
+<p>Vous recevrez un e-mail de confirmation sur <%= current_user.email %>
+  <h3>RECAP DE LA COMMANDE</h3>
+  <% @cart.items.each do |each_item| %>
+    <div><%= each_item.title %></div>
+    <div><%= each_item.price %></div>
+  <% end %>
+
+
+<%= link_to "Revenir au Profil", user_path(current_user.id), class: "btn btn-info btn-block" %>

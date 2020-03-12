@@ -15,10 +15,9 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   </head>
-  
 
   <body>
-    <body>
+   <main>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="<%= root_path %>">E-Kitty</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +83,7 @@
       <%= yield %>
 
     </div>
-  
+  </main>
 
 <!-- Footer -->
 <footer class=" footer page-footer font-small blue pt-4 bg-primary text-white sticky-bottom mt-5">
@@ -99,65 +98,11 @@
       <div class="col-md-4 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase text-dark">E-Kitty</h5>
+        <h5 class="text-uppercase text-dark mb-2">E-Kitty</h5>
         <p>On a tant à partager !</p>
-
-      </div>
-      <!-- Grid column -->
-
-      <hr class="clearfix w-100 d-md-none pb-3">
-
-      <!-- Grid column -->
-      <div class="col-md-4 mb-md-0 mb-3">
-
-        <!-- Links -->
-        <h5 class="text-uppercase text-dark pr-2">AIDE ET INFORMATIONS</h5>
-
-        <ul class="list-unstyled text-white">
-          <li>
-            <a href="#!" class = "text-white">Assistance</a>
-          </li>
-          <li>
-            <a href="#!" class = "text-white">Suivi de commande</a>
-          </li>
-          <li>
-            <a href="#!" class = "text-white">Livraisons & Retours</a>
-          </li>
-          <li>
-            <a href="#!" class = "text-white">FAQ sur les retours</a>
-          </li>
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
-      <!-- Grid column -->
-      <div class="col-md-4 mb-md-0 mb-3">
-
-        <!-- Links -->
-        <h5 class="text-uppercase text-dark">Mieux nous connaître</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!"class = "text-white">Qui sommes-nous ?</a>
-          </li>
-          <li>
-            <a href="#!"class = "text-white">Contact</a>
-          </li>
-          <li>
-            <a href="#!"class = "text-white">E-Kitty recrute !</a>
-          </li>
-          <li>
-            <a href="#!" class = "text-white">FAQ sur les chats</a>
-          </li>
-          
-        </ul>
-
-      </div>
-      <!-- Grid column -->
-
+        <a class="text-light text-left" href="/statics/contact">Contact</a>
+      </div>        
     </div>
-    <!-- Grid row -->
 
   </div>
   <!-- Footer Links -->
@@ -166,9 +111,10 @@
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
     <a href="https://mdbootstrap.com/" class = "text-white"> MDBootstrap.com</a>
   </div>
-  <!-- Copyright -->
 
 </footer>
+
 </body>
-<!-- Footer -->
+
+
 </html>

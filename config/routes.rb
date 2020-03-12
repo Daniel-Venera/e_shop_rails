@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :orders, only: [:create, :show]
     end
   end
+			resources :charges
 
   get "/statics/:static" => "statics#show"
 end
