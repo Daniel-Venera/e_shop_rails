@@ -39,11 +39,12 @@
 							<%= each_order.items.count %> photos achetées
 						</div>
 
-						<div class="col-4">
-							Prix Total :
+						<div class="col-4 text-center">
+						Prix Total : <%= each_order.price_sum.to_i%> €
 						</div>
-						<div class="col-4">
-							Date :
+
+						<div class="col-4 text-right">
+							Date : <%= each_order.updated_at %>
 						</div>
 					</div>
 
