@@ -1,5 +1,5 @@
+<br /><br />
 <h1 class="text-center"> Voici votre panier !</h1>
-<br />
 <br />
 <br />
 <div class="card-body">
@@ -26,10 +26,10 @@
     </div>
     <hr>
   <% end %>
-  <br />
-  <div class="pull-right">
-		<%= link_to "PASSER COMMANDE STRIPE", new_charge_path, class: "btn btn-warning btn-block" %>
-		<p class="float-right border rounded p-2 bg-light">Prix Total : <%= @price_sum %> euros</p>
+  <div class="text-right mr-5 ml-5">
+  	<h5 class=" ">Prix Total :  &nbsp;    <span style = "color:grey"><%= @price_sum %>  euros</h5> </span><br/><br/>
+		<%= link_to "PASSER COMMANDE STRIPE", new_charge_path, class: "btn btn-secondary btn-block  d-flex align-items-center justify-content-center", style: "height:50px" %>
+	
 	<% else %>
 
 		<p>Votre panier ne contient aucune photo...</p>
