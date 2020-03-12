@@ -16,16 +16,17 @@
   </head>
   
     <body class="bg">
+   
         <%= render 'layouts/navbar'%>
-
+  <main>
         <div class="container p-0 mt-0">
           <!-- Les Flash d'error -->
           <%= render 'layouts/messages' %>
-          <br />
+          <br /> 
           <%= yield %>
 
         </div>
-      
+  </main>
         <%= render 'layouts/footer'%>
   
 

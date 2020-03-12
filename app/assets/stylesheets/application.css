@@ -50,15 +50,24 @@
   margin-left: 10px;
 }
 
+nav {
+  min-height: 10vh;
+}
+
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-
+  
 }
 
 main {
   flex: 1;
+  min-height: 70vh;
+}
+
+footer {
+  min-height: 20vh;
+
 }
 
 .btn-file {
