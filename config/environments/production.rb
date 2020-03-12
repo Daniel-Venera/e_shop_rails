@@ -91,8 +91,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
 	config.active_record.dump_schema_after_migration = false
-
+  
 	# ============ DEVISE MAILER CONFIG ENV PROD =========
 # config.action_mailer.default_url_options = { host => 'e-shop-thp.herokuapp.com' }
-
+  config.require_master_key = true 
 end
