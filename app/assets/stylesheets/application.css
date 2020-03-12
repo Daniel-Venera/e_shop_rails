@@ -23,6 +23,7 @@
   background-repeat:no-repeat;
   background-position: center top;
   border: none;
+  margin: 0em;
   }
 .btn-login {
   width: 250px;
@@ -36,6 +37,7 @@
   display: block;
   background-size: cover;
 }
+
 .border {
   border: none;
 }
