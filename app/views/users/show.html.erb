@@ -32,12 +32,14 @@
 						<div class="col-4">
 							<%= each_order.items.count %> photos achetées
 						</div>
+						<% if each_order.items.count > 0 %>
+							<div class="col-4">
+							Prix Total :<%= each_order.items[0].price %>
+							</div>
+							<% end %>
 
 						<div class="col-4">
-							Prix Total :
-						</div>
-						<div class="col-4">
-							Date :
+							Date : <%=  each_order.created_at.to_time %>
 						</div>
 					</div>
 
