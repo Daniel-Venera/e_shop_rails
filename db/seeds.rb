@@ -20,7 +20,7 @@ OrderItem.destroy_all
 count = 0
 20.times do |a|
 	count += 1
-    a = Item.create(id: count, title: Faker::Creature::Cat.breed + " #{rand(1..1000)}", description: "a #{['big', 'little', 'medium-sized'].sample + " and " + ["lovely", "pretty", 'beautiful', 'gorgeous']. sample} catty which his first words were : '#{Faker::Quote.yoda}'", price: rand(5..20), image_url: "not delivered yet")
+    a = Item.create(id: count, title: Faker::Creature::Cat.breed + " #{rand(1..1000)}", description: "a #{['big', 'little', 'medium-sized'].sample + " and " + ["lovely", "pretty", 'beautiful', 'gorgeous']. sample} catty which his first words were : '#{Faker::Quote.yoda}'", price: rand(5..20))
 end
 
 count = 0

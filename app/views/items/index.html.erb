@@ -10,7 +10,11 @@
       <% @items.each do |item| %>
       <div class="col-md-3 col-sm-6 my-2">
         <div class="card"  >
-          <img src="https://dummyimage.com/170x/000/fff&text=Test" class="card-img-top kitty" alt="..." >
+          <%if item.image_url.attached?%>
+           <%= image_tag item.image_url, alt: 'image', class: "card-img-top kitty", alt: "image"  %>
+          <%else%>
+           <%= image_tag "https://dummyimage.com/170x/000/fff&text=Test", alt: 'image', class: "card-img-top kitty"  %>
+          <% end %>
           <div class="card-body text-center">
             <h5 class="card-title nowrap"> <%= item.title.truncate(15) %> </h5>
             <small class="card-text text-center"> <%= item.price.to_i %> € </small>
