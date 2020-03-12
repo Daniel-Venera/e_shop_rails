@@ -1,45 +1,48 @@
- <div class = "container mb-5"> 
-  <div class="row">
-    <div class = "col-md-7">
-      <h3 class= "card-header"> <%=@item.title%> </h3>
-      <div class="card-body">
-        <h5 class="card-title">British Longhair</h5>
-        <h6 class="card-subtitle text-muted">Chat mignon</h6>
-      </div>
-      <div class="card-body">
-        <p class="card-text"><%=@item.description%></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%=@item.price%> €</li>
-      </ul>
-      <div class="card-body">
-        <a href="https://www.croquetteland.com/fr/blog/chat/leducation-du-british-shorthair/" class="card-link">Education</a>
-        <a href="https://www.whiskas.fr/nos-produits/chats-1-an-et-plus?gclid=Cj0KCQjw0pfzBRCOARIsANi0g0tfn04ysFB1II6okU4NHO6qp-w_SSxRmweh_USkFGVdQYWcn7nGzvsaAls6EALw_wcB" class="card-link">Nourir ton chat</a>
-      </div>
-      <div class="card-footer text-muted">
-        2 days ago
-      </div>
-    </div>
-      <div class = "col-md-5 text-center ">
-        <%# <img style="height: 300px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">%>
-        <%if @item.image_url.attached?%>
-  <%= image_tag @item.image_url, alt: 'image', style: "height: 300px; width: 100%; display: block;" %>
-<%else%>
-        <img style="height: 300px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-<%end%>
-<%= form_tag item_image_urls_path(@item),  multipart: true do %>
-  <span class= "btn btn-large btn-warning btn-file">
-  Choose File
-  <%= file_field_tag :image_url %>
-  </span>
-  <%= submit_tag "Uploader l'image", class: "btn btn-primary mb-4 mt-4" %>
-  
-<% end %>
-        <%= link_to 'Ajouter au panier',  item_cart_items_path(@item.id), method: 'post',  class: "btn btn-secondary" %>
-        <div><%= flash[:success] %></div>
-        <div><%= flash[:warning] %></div>
-        
+<div class = "container mb-5"> 
+	<div class="row">
+		<div class = "col-md-7">
+			<h3 class= "card-header"> <%=@item.title%> </h3>
+			<div class="card-body">
+				<h5 class="card-title">British Longhair</h5>
+				<h6 class="card-subtitle text-muted">Chat mignon</h6>
+			</div>
+			<div class="card-body">
+				<p class="card-text"><%=@item.description%></p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item"><%=@item.price%> €</li>
+			</ul>
+			<div class="card-body">
+				<a href="https://www.croquetteland.com/fr/blog/chat/leducation-du-british-shorthair/" class="card-link">Education</a>
+				<a href="https://www.whiskas.fr/nos-produits/chats-1-an-et-plus?gclid=Cj0KCQjw0pfzBRCOARIsANi0g0tfn04ysFB1II6okU4NHO6qp-w_SSxRmweh_USkFGVdQYWcn7nGzvsaAls6EALw_wcB" class="card-link">Nourir ton chat</a>
+			</div>
+			<div class="card-footer text-muted">
+				2 days ago
+			</div>
+		</div>
+		<div class = "col-md-5 text-center ">
+			<%# <img style="height: 300px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">%>
+			<%if @item.image_url.attached?%>
+				<%= image_tag @item.image_url, alt: 'image', style: "height: 300px; width: 100%; display: block;" %>
+			<%else%>
+				<img style="height: 300px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+			<%end%>
 
-      </div>
-  </div>
+			<% if isAdmin? %>
+				<%= form_tag item_image_urls_path(@item),  multipart: true do %>
+					<span class= "btn btn-large btn-warning btn-file">
+						Choose File
+						<%= file_field_tag :image_url %>
+					</span>
+					<%= submit_tag "Uploader l'image", class: "btn btn-primary mb-4 mt-4" %>
+				<% end %>
+			<% end %>
+			<%= link_to 'Ajouter au panier',  item_cart_items_path(@item.id), method: 'post',  class: "btn btn-secondary" %>
+
+			<div><%= flash[:success] %></div>
+			<div><%= flash[:warning] %></div>
+
+
+		</div>
+	</div>
 </div>

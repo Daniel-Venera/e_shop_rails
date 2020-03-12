@@ -1,25 +1,36 @@
-<%= form_tag charges_path do %>
-	<article>
-		<% if flash[:error].present? %>
-			<div id="error_explanation">
-				<p><%= flash[:error] %></p>
-			</div>
-		<% end %>
-		<label class="amount">
-			<span>Montant de la Commande : <%= @amount / 100%> &euro;</span>
-		</label>
-	</article>
+<br/>
+<br/>
 
-	<h3>RECAP DE LA COMMANDE</h3>
-	<% @cart.items.each do |each_item| %>
-		<div><%= each_item.title %></div>
-		<div><%= each_item.price %></div>
-	<% end %>
+		<div class=" card container-fluid col-md-8 p-0  shadow">
 
-	<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-					data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-				data-description="a Cart Order"
-		data-amount="<%= @amount %>"
-	 data-locale="auto"></script>
+		<div class="card-header bg-secondary text-white ">
+			<h2 class="text-center"> Récapitulatif de votre commande: </h2>
+		</div>
+			<div class = "card-body">
+				<%= form_tag charges_path do %>
+					<% @cart.items.each do |each_item| %>
+						<div><%= each_item.title %> <span class="float-right"><%= each_item.price %> €</span></div>
+						<hr>
+					<% end %>
+						<article>
+						<% if flash[:error].present? %>
+							<div id="error_explanation">
+								<p><%= flash[:error] %></p>
+							</div>
+						<% end %>
+						<label class="amount float-right">
+							<h5>Montant total : &nbsp; <span style="color:grey"><%= @amount / 100%> &euro;</span></h5>
+						</label>
+					</article>
+					<br/><br/><br/>
+					
 
-<% end %>
+					<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+									data-key="<%= Rails.configuration.stripe[:publishable_key]%>"
+								data-description="a Cart Order"
+						data-amount="<%= @amount %>"
+					data-locale="auto"></script>
+
+				<% end %>
+				</div>
+		</div>
