@@ -24,4 +24,21 @@ class Item < ApplicationRecord
 		has_many :orders, through: :order_items
     
     has_one_attached :image_url 
+
+		def orders_qty
+			qty = self.orders.count
+		end
+
+		def self.best_item
+			best_item = Item.first
+			max_boughts = Item.first.orders_qty
+			self.all.each do |each_item|
+				if each_item.orders_qty > max_boughts
+					max_boughts = each_item.orders_qty
+					best_item = each_item
+				end
+			end
+			return best_item
+		end
+
 end

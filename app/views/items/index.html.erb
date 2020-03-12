@@ -1,3 +1,4 @@
+
 <div class="jumbotron md-12">
   <h1 class="display-3 text-dark">E-KITTY</h1>
   <p class="lead text-dark">On a tant à partager !</p>
@@ -9,7 +10,7 @@
     <div class="row">
       <% @items.each do |item| %>
       <div class="col-md-3 col-sm-6 my-2">
-        <div class="card"  >
+        <div class="card border-0 shadow"  >
           <%if item.image_url.attached?%>
            <%= image_tag item.image_url, alt: 'image', class: "card-img-top kitty"%>
           <%else%>
@@ -20,8 +21,10 @@
             <small class="card-text text-center"> <%= item.price.to_i %> € </small>
             <br />
             <a href="<%= item_path(item.id)%>" class="btn btn-primary"> Voir la photo </a>
+
           </div>
         </div>
-      </div>
-    <% end %>
-   </div>
+        </div>
+      <% end %>
+    </div>
+  
