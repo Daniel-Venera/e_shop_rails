@@ -94,5 +94,5 @@ Rails.application.configure do
   
 	# ============ DEVISE MAILER CONFIG ENV PROD =========
   config.action_mailer.default_url_options = { :host => 'e-shop-thp.herokuapp.com' }
-  # config.require_master_key = true
+  config.require_master_key = true
 end

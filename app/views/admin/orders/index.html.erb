@@ -1,0 +1,68 @@
+<%= flash[:success] %>
+<%= flash[:danger] %>
+
+<h1>Gestion des Orders</h1>
+
+<h3>Dashboard</h3>
+<div class="container-fluid">
+	<div class="row">
+
+		<div class="col-6 p-0">
+			<h4>GRAPH</h4>
+		</div>
+
+		<div class="col-2 p-0">
+			<h4>NUMBERS</h4>
+			<div class="list-group">
+				<div class="list-group-item bg-transparent">Orders : <%= Order.all.count %></div>
+				<div class="list-group-item bg-transparent">Users : <%= User.all.count %></div>
+				<div class="list-group-item bg-transparent">CA : <%= Order.ca %>eur</div>
+			</div>
+		</div>
+
+		<div class="col-4 p-0">
+			<h4>IMPORTANT DATA</h4>
+			<div class="list-group">
+				<div class="list-group-item bg-transparent">best Buyer : <%= User.best_buyer.email %></div>
+				<div class="list-group-item bg-transparent">best Item : <%= Item.best_item.title %></div>
+				<div class="list-group-item bg-transparent">order average : <%= (Order.ca / Order.all.count).round(2) %> eur/order</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<h3>Historique</h3>
+<table class="table table-striped">
+	`
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>User</th>
+			<th>Prix Total</th>
+			<th>Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+
+	<tbody>
+
+		<% @orders.each do |each_order| %>
+
+			<tr>
+
+				<td><%= each_order.id %></td>
+				<td>user_id: <%= each_order.user.id %>, mail: <%= each_order.user.email %></td>
+				<td><%= each_order.price_sum %></td>
+				<td><%= each_order.created_at.to_formatted_s(:long)  %></td>
+				<td>
+					<%= link_to "Show", admin_order_path(each_order.id), class: 'btn btn-sm btn-primary' %>	
+				</td>
+
+			</tr>
+
+		<% end %>
+
+	</tbody>
+
+</table>

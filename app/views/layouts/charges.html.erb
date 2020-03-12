@@ -57,7 +57,7 @@
 
 					<ul class="navbar-nav ml-auto nav-flex-icons">
 						<li class="nav-item mr-3 ">
-							<a class="nav-link navabar-right text-white" href="<%= %>">Mon panier<img  class = "panier" src = "/assets/panier.png"></a>
+							<a class="nav-link navabar-right text-white" href="<%=user_cart_path(current_user.id, current_user.cart.id)%>">Mon panier<img  class = "panier" src = "/assets/panier.png"></a>
 						</li>
 						<li class="nav-item avatar">
 							<a class="nav-link p-0" href="#">
@@ -73,6 +73,8 @@
 
 		</nav>
 
+		<main>
+
 		<div class="container">
 			<!-- Les Flash d'error -->
 			<%= render 'layouts/messages' %>
@@ -80,91 +82,34 @@
 			<%= yield %>
 
 		</div>
+		</main>
 
 
 		<!-- Footer -->
-		<footer class=" footer page-footer font-small blue pt-4 bg-primary text-white sticky-bottom mt-5">
+<footer class=" footer page-footer font-small blue pt-4 bg-primary text-white sticky-bottom mt-5">
 
-			<!-- Footer Links -->
-			<div class="container-fluid text-center text-md-left text-white">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left text-white">
 
-				<!-- Grid row -->
-				<div class="row">
+    <!-- Grid row -->
+    <div class="row">
+    <!-- Grid column -->
+      <div class="col-md-4 mt-md-0 mt-3">
 
-					<!-- Grid column -->
-					<div class="col-md-4 mt-md-0 mt-3">
+        <!-- Content -->
+        <h5 class="text-uppercase text-dark mb-2">E-Kitty</h5>
+        <p>On a tant à partager !</p>
+        <a class="text-light text-left" href="/statics/contact">Contact</a>
+      </div>        
+    
+		</div>
+  </div>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/" class = "text-white"> MDBootstrap.com</a>
+  </div>
 
-						<!-- Content -->
-						<h5 class="text-uppercase text-dark">E-Kitty</h5>
-						<p>On a tant à partager !</p>
-
-					</div>
-					<!-- Grid column -->
-
-					<hr class="clearfix w-100 d-md-none pb-3">
-
-					<!-- Grid column -->
-					<div class="col-md-4 mb-md-0 mb-3">
-
-						<!-- Links -->
-						<h5 class="text-uppercase text-dark pr-2">AIDE ET INFORMATIONS</h5>
-
-						<ul class="list-unstyled text-white">
-							<li>
-								<a href="#!" class = "text-white">Assistance</a>
-							</li>
-							<li>
-								<a href="#!" class = "text-white">Suivi de commande</a>
-							</li>
-							<li>
-								<a href="#!" class = "text-white">Livraisons & Retours</a>
-							</li>
-							<li>
-								<a href="#!" class = "text-white">FAQ sur les retours</a>
-							</li>
-						</ul>
-
-					</div>
-					<!-- Grid column -->
-
-					<!-- Grid column -->
-					<div class="col-md-4 mb-md-0 mb-3">
-
-						<!-- Links -->
-						<h5 class="text-uppercase text-dark">Mieux nous connaître</h5>
-
-						<ul class="list-unstyled">
-							<li>
-								<a href="#!"class = "text-white">Qui sommes-nous ?</a>
-							</li>
-							<li>
-								<a href="#!"class = "text-white">Contact</a>
-							</li>
-							<li>
-								<a href="#!"class = "text-white">E-Kitty recrute !</a>
-							</li>
-							<li>
-								<a href="#!" class = "text-white">FAQ sur les chats</a>
-							</li>
-
-						</ul>
-
-					</div>
-					<!-- Grid column -->
-
-				</div>
-				<!-- Grid row -->
-
-			</div>
-			<!-- Footer Links -->
-
-			<!-- Copyright -->
-			<div class="footer-copyright text-center py-3">© 2020 Copyright:
-				<a href="https://mdbootstrap.com/" class = "text-white"> MDBootstrap.com</a>
-			</div>
-			<!-- Copyright -->
-
-		</footer>
+</footer>
 
 
 	</body>

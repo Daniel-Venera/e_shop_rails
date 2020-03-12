@@ -1,0 +1,27 @@
+<div class="container py-3">
+	<h2 class="font-weight-bold text-center my-4">Créer un Item</h2>
+
+	<%=form_for @item, url: {action: "create"}, html: {class: "list-group"} do |f|%>
+
+		<div class="form-group">
+			<%= f.label :title, "Titre"%> 
+			<%= f.text_field :title, class: "form-control list-group-item"%>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description, "Description" %>
+			<%= f.text_area :description, class: "form-control list-group-item" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :price, "Prix"%> 
+			<%= f.text_field :price, class: "form-control list-group-item"%>
+		</div>
+
+		<div class="form-group">
+			<button type="submit" class="btn btn-success btn-block">Créer l'Item</button>
+		</div>
+
+	<%end%>
+
+</div>
