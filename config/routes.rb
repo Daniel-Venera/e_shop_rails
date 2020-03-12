@@ -16,8 +16,9 @@ Rails.application.routes.draw do
 	resources :charges
 
 
-	scope 'prefix', module: 'admin', as: 'admin' do
+	scope 'admin', module: 'admin', as: 'admin' do
 		resources :items
+		resources :orders, only: [:index, :show]
 	end
 
 
