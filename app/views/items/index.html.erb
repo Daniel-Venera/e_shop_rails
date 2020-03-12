@@ -11,7 +11,7 @@
       <div class="col-md-3 col-sm-6 my-2">
         <div class="card"  >
           <%if item.image_url.attached?%>
-           <%= image_tag item.image_url, alt: 'image', class: "card-img-top kitty", alt: "image"  %>
+           <%= image_tag item.image_url, alt: 'image', class: "card-img-top kitty"%>
           <%else%>
            <%= image_tag "https://dummyimage.com/170x/000/fff&text=Test", alt: 'image', class: "card-img-top kitty"  %>
           <% end %>
