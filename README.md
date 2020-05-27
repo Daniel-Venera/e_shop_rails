@@ -1,8 +1,6 @@
 ## THE HACKING PROJECT WEEK 10
 # E-SHOP
 
-The heroku app is available here : https://e-shop-thp.herokuapp.com/
-
 You can buy pictures of cats
 
 Note : 
